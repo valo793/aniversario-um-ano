@@ -50,17 +50,13 @@ export default function Closing({ onReveal }: ClosingProps) {
     frameRef.current = requestAnimationFrame(tick);
   };
 
-  const startHold = (pointerId?: number) => {
+  const startHold = () => {
     if (isRevealed || isHolding) return;
 
     clearFrame();
     holdStartTimeRef.current = null;
     setIsHolding(true);
     setHoldProgress(0);
-
-    if (pointerId !== undefined) {
-      buttonRef.current?.setPointerCapture?.(pointerId);
-    }
 
     frameRef.current = requestAnimationFrame(tick);
   };
@@ -77,28 +73,8 @@ export default function Closing({ onReveal }: ClosingProps) {
   };
 
   useEffect(() => {
-    return () => {
-      clearFrame();
-    };
+    return () => clearFrame();
   }, []);
-
-  const handlePointerDown = (event: React.PointerEvent<HTMLButtonElement>) => {
-    if (event.button !== 0) return;
-    event.preventDefault();
-    startHold(event.pointerId);
-  };
-
-  const handlePointerUp = () => {
-    if (!isRevealed) {
-      stopHold(true);
-    }
-  };
-
-  const handlePointerCancel = () => {
-    if (!isRevealed) {
-      stopHold(true);
-    }
-  };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
@@ -109,9 +85,7 @@ export default function Closing({ onReveal }: ClosingProps) {
   const handleKeyUp = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.key !== 'Enter' && event.key !== ' ') return;
     event.preventDefault();
-    if (!isRevealed) {
-      stopHold(true);
-    }
+    if (!isRevealed) stopHold(true);
   };
 
   const buttonLabel = isRevealed
@@ -151,25 +125,34 @@ export default function Closing({ onReveal }: ClosingProps) {
           transition={{ delay: 0.35, duration: 0.6 }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <button
-            ref={buttonRef}
+          <motion.button
             type="button"
-            onPointerDown={handlePointerDown}
-            onPointerUp={handlePointerUp}
-            onPointerLeave={handlePointerUp}
-            onPointerCancel={handlePointerCancel}
+            onTapStart={() => startHold()}
+            onTap={() => { if (!isRevealed) stopHold(true); }}
+            onTapCancel={() => { if (!isRevealed) stopHold(true); }}
+            onContextMenu={(e) => {
+              // Previne menu de contexto
+              e.preventDefault();
+            }}
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
-            className="sticker-ring relative overflow-hidden min-h-[64px] min-w-[280px] px-10 py-4 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#6a3a3d] touch-none select-none outline-none"
-            style={{ userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }}
+            whileTap={{ scale: 0.98 }}
+            className="sticker-ring relative overflow-hidden min-h-[64px] min-w-[280px] px-10 py-4 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#6a3a3d] outline-none cursor-pointer"
+            style={{ 
+              touchAction: 'none', 
+              userSelect: 'none', 
+              WebkitUserSelect: 'none', 
+              WebkitTouchCallout: 'none', 
+              WebkitTapHighlightColor: 'transparent' 
+            }}
           >
             <motion.div
-              className="absolute inset-y-0 left-0 bg-accent/18 pointer-events-none"
+              className="absolute inset-y-0 left-0 bg-accent/18"
               style={{ width: `${holdProgress}%` }}
               transition={{ duration: 0 }}
             />
-            <span className="relative z-10 pointer-events-none select-none">{buttonLabel}</span>
-          </button>
+            <span className="relative z-10">{buttonLabel}</span>
+          </motion.button>
 
           <motion.div
             className="absolute inset-0 bg-accent/18 blur-2xl rounded-full"
