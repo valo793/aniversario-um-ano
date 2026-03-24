@@ -22,6 +22,7 @@ export default function Home() {
   const [revealedFinal, setRevealedFinal] = useState(false);
 
   const handleGateEnter = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     setShowGate(false);
     setShowContent(true);
   };

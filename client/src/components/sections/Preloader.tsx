@@ -42,8 +42,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
     generateStars();
 
-    const totalDuration = 5500; // 5.5 seconds total
-    const countingDuration = 4.5; // 4.5 seconds to count to 365
+    const totalDuration = 3000; // 3.0 seconds total (much faster)
+    const countingDuration = 2.5; // 2.5 seconds to count to 365
 
     // Animate the progress smoothly to 365 over 4.5s
     const controls = animate(0, 365, {

@@ -61,7 +61,7 @@ export default function Hero({ heroImageUrl }: HeroProps) {
           <span className="h-px w-20 sm:w-48 bg-[#f4ebdd]/80" />
           <span className="relative mx-6 inline-flex h-14 w-14 items-center justify-center text-[#f4ebdd]">
             <span className="text-6xl leading-none">✦</span>
-            <span className="absolute text-xs">❤</span>
+            <span className="absolute text-xs" style={{ fontVariantEmoji: 'text' }}>&#x2764;&#xFE0E;</span>
           </span>
           <span className="h-px w-20 sm:w-48 bg-[#f4ebdd]/80" />
         </motion.div>
@@ -103,7 +103,7 @@ export default function Hero({ heroImageUrl }: HeroProps) {
                 className="opacity-100"
               />
             </svg>
-            <span className="relative z-10 px-4 pt-0.5">Te ❤ mais que ] -∞; +∞ [ !</span>
+            <span className="relative z-10 px-4 pt-0.5">Te <span style={{ fontVariantEmoji: 'text' }}>&#x2764;&#xFE0E;</span> mais que ] -∞; +∞ [ !</span>
           </motion.div>
 
           <motion.div
