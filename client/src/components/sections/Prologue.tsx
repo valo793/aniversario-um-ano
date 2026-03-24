@@ -85,8 +85,8 @@ export default function Prologue({ prologueImageUrl }: PrologueProps) {
                   <motion.img
                     src={prologueImageUrl}
                     alt={content.prologue.imageAlt}
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'grayscale(1) contrast(1.06) brightness(0.88)', willChange: 'opacity, transform' }}
+                    className="w-full h-full object-cover blur-[5px] grayscale contrast-[1.06] brightness-[0.88]"
+                    style={{ willChange: 'opacity, transform' }}
                     initial={{ opacity: 0, scale: 1.05 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1.2, ease: 'easeOut' }}

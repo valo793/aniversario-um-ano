@@ -160,14 +160,15 @@ export default function Closing({ onReveal }: ClosingProps) {
             onPointerCancel={handlePointerCancel}
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
-            className="sticker-ring relative overflow-hidden min-h-[64px] min-w-[280px] px-10 py-4 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#6a3a3d] touch-none select-none"
+            className="sticker-ring relative overflow-hidden min-h-[64px] min-w-[280px] px-10 py-4 text-xs sm:text-sm uppercase tracking-[0.16em] text-[#6a3a3d] touch-none select-none outline-none"
+            style={{ userSelect: 'none', WebkitUserSelect: 'none', WebkitTouchCallout: 'none' }}
           >
             <motion.div
-              className="absolute inset-y-0 left-0 bg-accent/18"
+              className="absolute inset-y-0 left-0 bg-accent/18 pointer-events-none"
               style={{ width: `${holdProgress}%` }}
               transition={{ duration: 0 }}
             />
-            <span className="relative z-10">{buttonLabel}</span>
+            <span className="relative z-10 pointer-events-none select-none">{buttonLabel}</span>
           </button>
 
           <motion.div
