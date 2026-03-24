@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "title": "365 Dias de Nos",
+    "subtitle": "Um ano de amor, memoria e promessa",
+    "description": "Uma colagem sentimental do nosso primeiro ano"
+  },
+  "preloader": {
+    "text": "Separando nossos melhores pedacos..."
+  },
+  "gate": {
+    "title": "Bem-vinda",
+    "subtitle": "Uma comemoração de nossa união",
+    "cta": "Abrir nossa carta",
+    "audioHint": "Ative o som!"
+  },
+  "hero": {
+    "title": "365 Dias",
+    "subtitle": "um ano do resto da nossa história",
+    "imageAlt": "Foto do casal"
+  },
+  "prologue": {
+    "title": "Nossa Historia",
+    "content": "Há um ano minha vida mudou. Entre tantos dias mundanos, você me provou que ainda há muito que quero experienciar. Não houve apenas um instante grandioso, mas sim uma sequência de pequenas certezas: sua risada, seu toque, seu jeito de ficar, sua forma de me olhar. Desde então, cada capitulo tem o seu nome em alguma linha e eu temo não ser mais capaz de viver uma vida diferente.",
+    "imageAlt": "Memoria do inicio"
+  },
+  "timeline": [
+    {
+      "date": "Marco de 2025",
+      "title": "Quando comecou",
+      "text": "O dia em que em que o mundo me trouxe meu maior presente.",
+      "imageAlt": "Primeiro encontro"
+    },
+    {
+      "date": "Novembro de 2025",
+      "title": "Minha certeza",
+      "text": "O mês em que tive certeza, fui feito pra ti e você pra mim.",
+      "imageAlt": "Viagem especial"
+    },
+    {
+      "date": "Março de 2026",
+      "title": "Nosso ano",
+      "text": "Um ano inteiro e ainda assim, cada dia ao teu lado refresca minha alma.",
+      "imageAlt": "Celebracao"
+    }
+  ],
+  "gallery": {
+    "title": "Fragmentos de um Ano",
+    "subtitle": "os instantes que viraram lar",
+    "images": [
+      {
+        "id": 1,
+        "alt": "Memoria 1",
+        "size": "large"
+      },
+      {
+        "id": 2,
+        "alt": "Memoria 2",
+        "size": "small"
+      },
+      {
+        "id": 3,
+        "alt": "Memoria 3",
+        "size": "medium"
+      },
+      {
+        "id": 4,
+        "alt": "Memoria 4",
+        "size": "small"
+      },
+      {
+        "id": 5,
+        "alt": "Memoria 5",
+        "size": "large"
+      },
+      {
+        "id": 6,
+        "alt": "Memoria 6",
+        "size": "medium"
+      },
+      {
+        "id": 7,
+        "alt": "Memoria 7",
+        "size": "small"
+      },
+      {
+        "id": 8,
+        "alt": "Memoria 8",
+        "size": "large"
+      }
+    ]
+  },
+  "vows": {
+    "title": "Razoes de te Amar",
+    "subtitle": "palavras que não consigo verbalizar",
+    "lines": [
+      "Te amo porque você me acalma sem exigir nada em troca.",
+      "Te amo porque seu abraço é o lugar onde realmente descanço.",
+      "Te amo porque com você até o silêncio parece conversa.",
+      "Te amo porque você me motiva a ser quem sei que consigo ser.",
+      "Te amo porque seu sorriso sempre chega antes do meu medo.",
+      "Te amo porque você me vê por inteiro e continua ficando.",
+      "Te amo porque ansio por viver milhares de pequenos dias com você.",
+      "Te amo porque meu coração encontrou casa no seu nome."
+    ]
+  },
+  "closing": {
+    "title": "Seu Presente",
+    "subtitle": "uma declaração e dois presentes pra ti",
+    "cta": "pressione e segure para abrir",
+    "finalMessage": "Te amo. Ontem, hoje e cada próximo dia que vier.",
+    "declaration": "Kaka, eu te escolho em toda e qualquer vida, sem pestanejar. Obrigado por ser minha paz, minha risada favorita e meu lugar no mundo. Esse presente é simples, mas vem do coração.",
+    "coupons": [
+      {
+        "title": "Vale Okumura",
+        "description": "Vale ∞ jantares no Okumura comigo. Todo dia que você quiser!"
+      },
+      {
+        "title": "Peca o que quiser",
+        "description": "Vale 1 pedido especial sem questionar. Pode pedir o que voce quiser."
+      }
+    ],
+    "imageAlt": "Mensagem final"
+  },
+  "audioTrack": {
+    "title": "Trilha Sonora",
+    "description": "Musica ambiente para acompanhar essa carta",
+    "filename": "/mitski.mp3"
+  }
+}
