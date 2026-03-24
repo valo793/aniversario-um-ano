@@ -69,7 +69,7 @@ export default function Hero({ heroImageUrl }: HeroProps) {
         <div className="flex-1 flex flex-col justify-center">
           <motion.h1
             className="mx-auto text-center poster-title select-none text-[clamp(11rem,44vw,36rem)] leading-[0.82] tracking-[0.004em]"
-            style={{ ...loveStyle, backgroundPosition: 'center 15%' }}
+            style={{ ...loveStyle, backgroundPosition: 'center 15%', willChange: 'transform, opacity' }}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{

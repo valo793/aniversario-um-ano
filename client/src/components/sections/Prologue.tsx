@@ -78,17 +78,18 @@ export default function Prologue({ prologueImageUrl }: PrologueProps) {
               {prologueImageUrl ? (
                 <motion.div
                   className="w-full h-[380px] sm:h-[460px] overflow-hidden"
-                  animate={prefersReducedMotion ? undefined : { scale: [1.02, 1, 1.02] }}
-                  transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ willChange: 'transform' }}
+                  animate={prefersReducedMotion ? undefined : { scale: [1.015, 1, 1.015] }}
+                  transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <motion.img
                     src={prologueImageUrl}
                     alt={content.prologue.imageAlt}
                     className="w-full h-full object-cover"
-                    style={{ filter: 'grayscale(1) contrast(1.06) brightness(0.88)' }}
-                    initial={{ filter: 'grayscale(1) contrast(1.06) brightness(0.88) blur(10px)' }}
-                    whileInView={{ filter: 'grayscale(1) contrast(1.06) brightness(0.88) blur(0px)' }}
-                    transition={{ duration: 2, ease: 'easeOut' }}
+                    style={{ filter: 'grayscale(1) contrast(1.06) brightness(0.88)', willChange: 'opacity, transform' }}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.2, ease: 'easeOut' }}
                     viewport={{ once: true }}
                   />
                 </motion.div>

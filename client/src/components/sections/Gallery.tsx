@@ -51,10 +51,12 @@ export default function Gallery({ galleryImages }: GalleryProps) {
         alt={image.alt}
         className={finalClassName}
         loading="lazy"
-        initial={{ filter: 'grayscale(1) contrast(1.07) brightness(0.9) saturate(0) blur(8px)' }}
-        whileInView={{ filter: 'grayscale(1) contrast(1.07) brightness(0.9) saturate(0) blur(0px)' }}
+        style={{ filter: 'grayscale(1) contrast(1.07) brightness(0.9) saturate(0)', willChange: 'opacity, transform' }}
+        initial={{ opacity: 0, scale: 1.04 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         transition={{
-          filter: { duration: 1.2, delay: index * 0.15 }
+          opacity: { duration: 0.8, delay: index * 0.12 },
+          scale: { duration: 1.2, delay: index * 0.12, ease: 'easeOut' }
         }}
         viewport={{ once: true }}
       />

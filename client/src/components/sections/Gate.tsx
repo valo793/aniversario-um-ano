@@ -53,6 +53,7 @@ export default function Gate({ onEnter }: GateProps) {
       >
         <motion.div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-[#f4ebdd]/30"
+          style={{ willChange: 'opacity' }}
           animate={prefersReducedMotion ? undefined : { opacity: [0.25, 0.45, 0.25] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
         />
